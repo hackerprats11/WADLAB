@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Mobile Website</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <style>
+    /* Custom styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .page {
+      background-color: #fff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px;
+    }
+    .page-header {
+      text-align: center;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 15px 0;
+      margin: 0;
+    }
+    .page-header h1 {
+      margin: 0;
+    }
+    .page-content {
+      padding: 20px;
+    }
+    .page-content p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .page-content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .page-content ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .page-content a {
+      display: block;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 10px auto;
+      width: 200px;
+    }
+    .page-content a:hover {
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Home page -->
+<div data-role="page" id="home" class="page">
+  <div data-role="header">
+    <h1 class="page-header">Home</h1>
+  </div>
+  <div data-role="content" class="page-content">
+    <p>Welcome to our simple mobile website!</p>
+    <a href="#about" data-role="button" data-transition="slide">About Us</a>
+    <a href="#contact" data-role="button" data-transition="slide">Contact Us</a>
+    <a href="#services" data-role="button" data-transition="slide">Our Services</a>
+    <a href="#gallery" data-role="button" data-transition="slide">Gallery</a>
+  </div>
+</div>
+
+<!-- About page -->
+<div data-role="page" id="about" class="page">
+  <div data-role="header">
+    <h1 class="page-header">About Us</h1>
+  </div>
+  <div data-role="content" class="page-content">
+    <p>This is a simple mobile website created using jQuery Mobile.</p>
+    <a href="#home" data-role="button" data-transition="slide">Back to Home</a>
+  </div>
+</div>
+
+<!-- Contact page -->
+<div data-role="page" id="contact" class="page">
+  <div data-role="header">
+    <h1 class="page-header">Contact Us</h1>
+  </div>
+  <div data-role="content" class="page-content">
+    <p>Contact us at contact@example.com</p>
+    <a href="#home" data-role="button" data-transition="slide">Back to Home</a>
+  </div>
+</div>
+
+<!-- Services page -->
+<div data-role="page" id="services" class="page">
+  <div data-role="header">
+    <h1 class="page-header">Our Services</h1>
+  </div>
+  <div data-role="content" class="page-content">
+    <p>Check out the services we offer:</p>
+    <ul>
+      <li>Service 1</li>
+      <li>Service 2</li>
+      <li>Service 3</li>
+    </ul>
+    <a href="#home" data-role="button" data-transition="slide">Back to Home</a>
+  </div>
+</div>
+
+<!-- Gallery page -->
+<div data-role="page" id="gallery" class="page">
+  <div data-role="header">
+    <h1 class="page-header">Gallery</h1>
+  </div>
+  <div data-role="content" class="page-content">
+    <p>Check out our gallery:</p>
+    <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+    <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+    <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+    <a href="#home" data-role="button" data-transition="slide">Back to Home</a>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script>
+    // jQuery functions
+    $(document).ready(function(){
+      // Hide all pages initially
+      $('[data-role="page"]').addClass('hidden');
+      // Show the home page
+      $('#home').removeClass('hidden');
+      // Add click event to navigation buttons
+      $('a').on('click', function(){
+        var target = $(this).attr('href');
+        $('[data-role="page"]').addClass('hidden');
+        $(target).removeClass('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
